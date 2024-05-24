@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%- include('./partials/links') %>
+    <title>Homepage</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+
+    <form action="/blog/upload" method="post" enctype="multipart/form-data">
+        <div class="mb-3 form-check">
+            <label class="file-upload" for="blog" accept="image/*">Blog:</label>
+            <input type="file" name="coverImageURL" class="file-upload" id="cover-image">
+        </div>
+        <div class="mb-3">
+          <label for="title" class="form-label">Title</label>
+          <input type="text" name="title" class="form-control" id="title" aria-describedby="title">
+        </div>
+        <div class="mb-3">
+            <label for="text-area" class="form-label">Comment:</label>
+            <input type="text" name="comment" class="form-control" id="text-area" aria-describedby="title">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    <%- include('./partials/scripts') %>
+</body>
+</html>
